@@ -1,82 +1,210 @@
-# Desafio Técnico Sync360.io: Aplicação de Gestão de Perfil de Usuário
+# Desafio Técnico Sync360.io: Perfil de Usuário 👤
+
+Bem-vindo ao **Desafio Técnico de Gestão de Perfil de Usuário** desenvolvido para a Sync360.io! Este projeto foca na criação de uma aplicação Fullstack que permite aos usuários gerenciar suas informações de perfil de forma intuitiva e persistente.
 
 ![Badge](https://img.shields.io/badge/Tecnologias-React%20%7C%20Node.js%20%7C%20MySQL-blue?style=for-the-badge&logo=react&logoColor=white&logo=nodedotjs&logoColor=white&logo=mysql&logoColor=white)
 
-## Descrição do Projeto
+## 📋 Descrição do Projeto
 
-Este repositório contém a solução desenvolvida para o **Desafio Técnico da Sync360.io**, focado na criação de uma aplicação Fullstack para **Gestão de Perfil de Usuário**. Meu objetivo foi entregar uma interface interativa para edição e salvamento de dados em um banco de dados MySQL, demonstrando minhas habilidades com as tecnologias requisitadas e aderência às boas práticas de desenvolvimento.
+Este projeto é uma aplicação web completa desenvolvida para o desafio técnico da Sync360.io. Ela oferece uma interface de usuário responsiva e um backend robusto para gerenciar informações de perfil de usuário. O principal objetivo foi criar um ambiente onde o usuário pode editar seus dados pessoais, carregar uma foto e ter seu endereço preenchido automaticamente via integração com uma API externa, tudo isso com persistência de dados em um banco de dados MySQL.
 
-A aplicação foi projetada para ser intuitiva e responsiva, proporcionando uma experiência de usuário consistente em diferentes dispositivos.
+## 🚀 Funcionalidades
 
-## Funcionalidades Implementadas
+As funcionalidades implementadas foram baseadas nos requisitos do desafio:
 
-Este projeto aborda todos os requisitos funcionais especificados no desafio:
+-   **Exibição e Edição de Informações do Usuário:**
+    -   **Imagem de Perfil:** Upload e exibição de foto de perfil personalizada.
+    -   **Dados Pessoais:** Visualização e edição de nome completo e data de nascimento, com cálculo automático da idade.
+    -   **Endereço:** Preenchimento automático de rua, bairro, cidade e estado via integração com a API ViaCEP.
+    -   **Biografia:** Um campo de texto livre para o usuário adicionar uma seção "Sobre Mim".
+-   **Formulário Interativo:** Interface intuitiva para edição e envio de todas as alterações.
+-   **Persistência de Dados:** Salvamento e recuperação de todas as informações do perfil em um banco de dados MySQL.
+-   **API RESTful:** Backend em Node.js com as rotas essenciais para buscar (`GET /usuario`) e salvar/atualizar (`POST /usuario`) os dados do perfil.
+-   **Interface Responsiva:** Design otimizado para garantir uma excelente experiência de usuário em dispositivos móveis e desktops.
 
-1.  **Exibição de Informações do Usuário:**
-    * Imagem de Perfil: Funcionalidade de upload e exibição de uma imagem de perfil personalizada.
-    * Nome Completo: Campo para visualização e edição do nome do usuário.
-    * Idade: Calculada automaticamente com base na data de nascimento fornecida.
-    * Endereço: Exibição detalhada de Rua, Bairro, Cidade e Estado, com preenchimento automatizado via integração com API externa.
-    * Biografia: Área de texto livre para que o usuário adicione informações adicionais sobre si.
-2.  **Formulário para Edição e Envio de Dados:** Uma interface intuitiva permite que o usuário modifique suas informações e salve as alterações no sistema.
-3.  **Persistência de Dados em MySQL:** Todas as informações do perfil são salvas e recuperadas de um banco de dados MySQL, garantindo a persistência dos dados.
-4.  **Aplicação Responsiva:** O design foi cuidadosamente pensado para adaptar-se a diferentes tamanhos de tela, garantindo uma boa aparência e usabilidade tanto em dispositivos móveis quanto em desktops.
+## ✨ Boas Práticas e Considerações Técnicas
 
-## Pontos-Chave e Boas Práticas
+Durante o desenvolvimento, priorizei as seguintes práticas:
 
-Durante o desenvolvimento deste projeto, priorizei as seguintes boas práticas e considerações técnicas:
+-   **Estrutura de Projeto Organizada:** Separação clara entre frontend (`frontend/`) e backend (`backend/`) para facilitar a manutenção e escalabilidade.
+-   **Componentização (React):** O frontend é modularizado em componentes reutilizáveis, promovendo um código mais limpo e manutenível.
+-   **Gerenciamento de Estado (React Hooks):** Uso eficiente de `useState` e `useEffect` para controle do fluxo de dados e interatividade.
+-   **Validação de Dados:** Implementação de validações básicas, como a integração com a API ViaCEP para CEPs.
+-   **Tratamento de Erros:** Feedback claro ao usuário em caso de dados inválidos ou falhas na comunicação com o servidor.
+-   **Segurança de Credenciais:** Uso de variáveis de ambiente (`dotenv`) para gerenciar informações sensíveis do banco de dados no backend.
 
--   **Estrutura de Projeto Organizada:** Adotei uma separação clara entre o Frontend (na pasta `frontend/`) e o Backend (na pasta `backend/`), facilitando a navegação e o desenvolvimento.
--   **API RESTful:** O backend, construído com Node.js e Express, oferece as rotas essenciais para manipular os dados do perfil (`GET /usuario` para buscar e `POST /usuario` para salvar/atualizar).
--   **Componentização (React):** O frontend é estruturado em componentes React reutilizáveis, o que contribui para a modularidade, manutenção e escalabilidade do código.
--   **Gerenciamento de Estado:** Utilizei os Hooks `useState` e `useEffect` do React para gerenciar o estado da aplicação de forma eficiente e reativa.
--   **Validação de Dados:** Implementei validações básicas, incluindo a verificação e preenchimento de CEP através de integração com uma API externa.
--   **Tratamento de Erros:** O usuário recebe feedback visual claro em caso de erros, como CEP inválido ou problemas na comunicação com o servidor.
--   **Autenticação de Credenciais:** As credenciais Git/GitHub são gerenciadas via Git Credential Manager, garantindo um processo de push seguro e eficiente.
+## 🛠️ Tecnologias Utilizadas
 
-## Tecnologias Utilizadas
+### **Frontend (React com Vite)**
+-   **React:** Biblioteca JavaScript para a construção da interface do usuário.
+-   **Vite:** Ferramenta de build para um ambiente de desenvolvimento rápido e eficiente.
+-   **Axios:** Cliente HTTP para comunicação com a API do backend.
+-   **Font Awesome:** Biblioteca de ícones para aprimorar a experiência visual.
+-   **CSS:** Estilização personalizada, focando na responsividade com Media Queries.
 
-Este projeto foi construído utilizando um conjunto de tecnologias modernas e amplamente utilizadas no mercado:
+### **Backend (Node.js com Express)**
+-   **Node.js:** Ambiente de execução JavaScript para o servidor.
+-   **Express.js:** Framework web para construção da API RESTful.
+-   **MySQL2:** Driver para conexão e interação com o banco de dados MySQL.
+-   **CORS:** Middleware para permitir requisições de diferentes origens.
+-   **Dotenv:** Gerenciamento seguro de variáveis de ambiente.
+-   **Nodemon:** Para reinício automático do servidor durante o desenvolvimento.
+-   **Multer:** Middleware para lidar com upload de arquivos (fotos de perfil).
+-   **Axios:** Utilizado para integração com APIs externas (ex: ViaCEP).
 
-### Frontend (React com Vite)
+### **Banco de Dados**
+-   **MySQL:** Sistema de gerenciamento de banco de dados relacional para persistência de dados.
+-   **MySQL Workbench:** Ferramenta visual para gerenciamento do banco de dados.
 
--   **React:** Biblioteca JavaScript robusta para a construção de interfaces de usuário dinâmicas.
--   **Vite:** Uma ferramenta de build rápida que otimiza o ambiente de desenvolvimento do frontend.
--   **Axios:** Cliente HTTP baseado em Promises, utilizado para realizar requisições assíncronas ao backend.
--   **Font Awesome:** Biblioteca de ícones que enriquece a interface visual da aplicação.
--   **CSS:** Estilização personalizada, com foco em responsividade e uma experiência visual agradável.
+### **Ferramentas de Desenvolvimento**
+-   **Git:** Sistema de controle de versão.
+-   **GitHub:** Plataforma de hospedagem de código.
+-   **Visual Studio Code:** Editor de código-fonte.
 
-### Backend (Node.js com Express)
+## ⚙️ Como Executar o Projeto Localmente
 
--   **Node.js:** Ambiente de execução JavaScript que permite construir o servidor da aplicação.
--   **Express.js:** Um framework web minimalista e flexível, utilizado para criar a API RESTful do projeto.
--   **MySQL2:** Driver oficial para uma comunicação eficiente e segura com o banco de dados MySQL.
--   **CORS:** Middleware essencial para gerenciar políticas de segurança, permitindo requisições de diferentes origens.
--   **Dotenv:** Utilizado para carregar variáveis de ambiente de um arquivo `.env`, mantendo configurações sensíveis fora do controle de versão.
--   **Nodemon:** Uma ferramenta de utilidade que monitora alterações no código e reinicia o servidor automaticamente, agilizando o desenvolvimento.
--   **Multer:** Middleware crucial para o tratamento de `multipart/form-data`, viabilizando o upload da imagem de perfil.
--   **Axios:** Também empregado no backend para realizar requisições HTTP, como a integração com a API ViaCEP.
+Siga os passos abaixo para colocar a aplicação em funcionamento em seu ambiente:
 
-### Banco de Dados
+### Pré-requisitos
 
--   **MySQL:** Sistema de gerenciamento de banco de dados relacional, escolhido para a persistência dos dados dos usuários.
--   **MySQL Workbench:** Ferramenta gráfica utilizada para o gerenciamento e interação com o banco de dados.
+Certifique-se de ter as seguintes ferramentas instaladas:
 
-### Ferramentas de Desenvolvimento
+-   **Node.js** (versão 14.x ou superior) e **npm** (ou **Yarn**)
+-   **MySQL Server**
+-   **Git**
 
--   **Git:** Sistema de controle de versão fundamental para o gerenciamento do histórico do código.
--   **GitHub:** Plataforma de hospedagem do repositório, facilitando a colaboração e a apresentação do projeto.
--   **Visual Studio Code:** Meu editor de código-fonte preferido para este desenvolvimento.
+### 1. Clonar o Repositório
 
-## Pré-requisitos
+Primeiro, clone o projeto para sua máquina local:
 
-Para configurar e executar este projeto em seu ambiente local, certifique-se de ter as seguintes ferramentas instaladas:
+```bash
+git clone [https://github.com/](https://github.com/)[SEU_USUARIO_GITHUB]/[SEU_NOME_DO_PROJETO].git
+cd [SEU_NOME_DO_PROJETO]
+2. Configuração do Banco de Dados MySQL
+Crie o banco de dados sync360_db:
+Abra seu cliente MySQL (ex: MySQL Workbench) e execute o comando SQL:
 
--   **Node.js** (versão 14.x ou superior) e **npm** (gerenciador de pacotes do Node.js) ou **Yarn**.
--   **MySQL Server**.
--   **Git**.
+SQL
 
+CREATE DATABASE IF NOT EXISTS sync360_db;
+USE sync360_db;
+Crie a tabela usuarios:
+No mesmo cliente MySQL, execute o seguinte script SQL para criar a estrutura da tabela:
 
+SQL
 
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_completo VARCHAR(255) NOT NULL,
+    data_nascimento DATE,
+    idade INT,
+    cep VARCHAR(10),
+    rua VARCHAR(255),
+    bairro VARCHAR(255),
+    cidade VARCHAR(255),
+    estado VARCHAR(5),
+    biografia TEXT,
+    foto_perfil VARCHAR(255) -- Caminho do arquivo da imagem no servidor
+);
+3. Configuração e Inicialização do Backend
+Navegue até o diretório do backend:
 
+Bash
 
+cd backend
+Instale as dependências do projeto:
+
+Bash
+
+npm install
+# ou
+# yarn install
+Configure as variáveis de ambiente:
+Crie um arquivo .env na pasta backend com o seguinte conteúdo, substituindo sua_senha_mysql pela sua senha real do MySQL:
+
+Snippet de código
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=sua_senha_mysql
+DB_DATABASE=sync360_db
+PORT=3001
+Inicie o servidor backend:
+
+Bash
+
+npm start
+# ou
+# yarn start
+O servidor estará ativo em http://localhost:3001.
+
+4. Configuração e Inicialização do Frontend
+Abra um novo terminal e navegue até o diretório do frontend (a partir da raiz do projeto):
+
+Bash
+
+cd ../frontend
+Instale as dependências do projeto:
+
+Bash
+
+npm install
+# ou
+# yarn install
+Inicie a aplicação React:
+
+Bash
+
+npm run dev
+# ou
+# yarn dev
+A aplicação estará acessível em seu navegador através do endereço fornecido pelo Vite (geralmente http://localhost:5173).
+
+Como Utilizar a Aplicação
+Com o backend e o frontend em execução, acesse a aplicação no seu navegador. Você poderá:
+
+Preencher e editar suas informações pessoais e data de nascimento.
+
+Clicar no avatar para fazer upload de uma foto de perfil.
+
+Na seção de endereço, inserir um CEP e utilizar o botão de busca (lupa) para preencher automaticamente os detalhes.
+
+Adicionar qualquer informação adicional na área "Sobre Mim".
+
+Clicar em "Salvar Alterações" para persistir todos os dados no banco de dados MySQL.
+
+📂 Estrutura de Pastas
+[SEU_NOME_DO_PROJETO]/
+├── backend/                  # Contém o código do servidor Node.js (API RESTful).
+│   ├── src/                  # Arquivos-fonte do backend.
+│   │   ├── controllers/      # Lógica de controle para processar requisições.
+│   │   ├── routes/           # Definição das rotas da API.
+│   │   ├── services/         # Lógica de interação com DB e APIs externas.
+│   │   ├── config/           # Configurações de conexão com o MySQL.
+│   │   └── uploads/          # Diretório para imagens de perfil.
+│   ├── .env.example          # Modelo de arquivo para variáveis de ambiente.
+│   ├── package.json          # Dependências e scripts do backend.
+│   └── server.js             # Ponto de entrada do servidor.
+├── frontend/                 # Contém o código da aplicação React.
+│   ├── public/               # Arquivos estáticos.
+│   ├── src/                  # Arquivos-fonte do frontend.
+│   │   ├── assets/           # Imagens e outros recursos.
+│   │   ├── components/       # Componentes React reutilizáveis.
+│   │   ├── App.jsx           # Componente raiz da aplicação.
+│   │   └── main.jsx          # Ponto de entrada do React.
+│   ├── package.json          # Dependências e scripts do frontend.
+│   └── vite.config.js        # Configuração do Vite.
+├── .gitignore                # Arquivos e diretórios a serem ignorados pelo Git.
+├── README.md                 # Este documento de apresentação do projeto.
+└── package.json              # Dependências globais do projeto (se aplicável).
+🧑‍💻 Contato
+Para quaisquer dúvidas ou para discutir este projeto, sinta-se à vontade para entrar em contato:
+
+Nome: Andrezza Coelho
+
+GitHub: https://github.com/AndrezzaCoelho
+
+LinkedIn: linkedin.com/in/andrezza-coelho
+
+📄 Licença
+Este projeto está licenciado sob a Licença MIT.
